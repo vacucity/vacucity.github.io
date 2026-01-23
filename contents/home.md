@@ -6,7 +6,7 @@ Economics is fun, coding is the future.
 
 #### Contact
 
--Email: 15527309607[at]163.com  
+-Email: 15527309607@163.com  
 
 -Email：wangchujie@stu.zuel.edu.cn
 #### Education
