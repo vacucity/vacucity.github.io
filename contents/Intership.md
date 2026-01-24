@@ -1,6 +1,6 @@
 
 - <strong>China Securities Wuhan Guanshan Road Securities Business Department </strong>
-- <stoong>Intern, 06/2023-07/2023 </stoong>
+-<stoong>Intern, 06/2023-07/2023 </stoong>
      
 -Helped develop the investment education product of the general registration system and interpreted it using PPT.
 
