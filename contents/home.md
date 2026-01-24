@@ -2,7 +2,7 @@
 
 [![Vacucity](https://img.shields.io/badge/Vacucity-github-blue?logo=github)](https://github.com/Vacucity)
 
-Economics is fun, coding is the future.
+Economics is for the fun, coding is the future.
 
 #### Contact
 -Email: 15527309607@163.com  
