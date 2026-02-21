@@ -1,7 +1,7 @@
 #### Submitted
 
 - ShuJin Cui <strong>ChuJie Wang </strong>* Qin Ye, ZhuoHuan He,Government Open Data and Corporate Risk-Taking: Evidence from China, <strong>《Financial Research Letter》</strong> <strong>Minor Review </strong> 
-- <stfong>Chujie Wang</stfong>*,Yan Song, YuXuan Lin, KangYing Huang, The Capital Response to the "Green Signal": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?, <strong>《Business Strategy And The Environment》</strong> <strong>Under Review </strong>
+- <stfong>Chujie Wang</stfong>*,Yan Song, YuXuan Lin, KangYing Huang, The Capital Response to the "Green Signal": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?, <strong>《Economic Analysis and Policy》</strong> <strong>Under Review </strong>
 
 #### Published
 
