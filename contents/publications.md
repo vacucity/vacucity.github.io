@@ -9,7 +9,9 @@
 
 - Yongjian H, Deheng X <strong>ChuJie Wang</strong> ,Digital Transformation and Stock Market Manipulation: Evidence from High-frequency Trading Data <strong>《Applied Economics》</strong>. [[Paper]](https://doi.org/10.1080/00036846.2025.2575854) 
   
-- ShuJin Cui <strong>ChuJie Wang </strong>* Qin Ye, ZhuoHuan He,Government Open Data and Corporate Risk-Taking: Evidence from China, <strong>《Financial Research Letter》</strong> <strong>Accept </strong> 
+- ShuJin Cui <strong>ChuJie Wang </strong>* Qin Ye, ZhuoHuan He,Government Open Data and Corporate Risk-Taking: Evidence from China, <strong>《Financial Research Letter》</strong> <strong>Accept </strong> [[Paper]](https://www.sciencedirect.com/science/article/abs/pii/S1544612326004447) 
+
+  
 
 #### Working Paper
 
