@@ -1,7 +1,11 @@
 #### Submitted
 
 
-- <stfong>Chujie Wang</stfong>*,Yan Song, YuXuan Lin, KangYing Huang, The Capital Response to the "Green Signal": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?, <strong>《Research in International Business and Finance》</strong> <strong>Under Review </strong>
+- <stfong>Chujie Wang</stfong>*,Yan Song, YuXuan Lin, KangYing Huang, The Capital Response to the "Green Signal": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?, <strong>《Research in International Business and Finance》</strong> <strong>Under review </strong>
+
+- <stfong>Chujie Wang</stfong>*,Tianhao Zhang, Can Judicial Deterrence Curb Corporate “Say-Do Discrepancies”?
+—A Quasi-Natural Experiment from the Environmental Courts, <strong>《Journal of Business Research》</strong> <strong> Under review  </strong>
+
 
 #### Published
 
@@ -27,5 +31,5 @@
 
 - <strong>Chujie W</strong>,  Study on Exaggerating or Truth to Facts? - The impact of industry-classified Information Disclosure on Enterprise's Catering for Innovation Information, <srong>Tutor: Xiaoyin B</srong>
 
-- <strong>Chujie W</strong>, Data Asset Mismatch <srong>Tutor: Xiaoyin B</srong>
+- <strong>Chujie W</strong>, Data Asset Mismatch <srong>Tutor: Xiaoyin B</srong> ,selected into The 2026 Chinese Economists Society (CES) China Annual Conference
 
