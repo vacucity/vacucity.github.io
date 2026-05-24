@@ -3,7 +3,6 @@
     {
       "title": "Group Research",
       "description": "Addressing the common challenge in research where numerous ideas fail to materialise due to fragmentation—such as inspiration scattered across memos and discussions confined to chat logs—this project aims to create a one-stop research collaboration application. It integrates scattered keywords into coherent research concepts and automates literature retrieval, management and analysis. The long-term goal is to cover the entire research lifecycle, from the 'germination of an idea' to the 'publication of a paper'.",
-      "technologies": ["React", "Node.js", "MongoDB", "AI/LLM"],
       "status": "In Progress",
       "statusClass": "working",
       "links": [
