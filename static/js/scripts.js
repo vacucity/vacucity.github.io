@@ -84,11 +84,13 @@ window.addEventListener('DOMContentLoaded', event => {
     // === Shared helper: render links ===
     function renderLinks(links, prefix) {
         if (!links || links.length === 0) return '';
-        return `<div class="${prefix}-card-links">` + links.map(l =>
-            `<a class="${prefix}-card-link" href="${l.url}" target="_blank" rel="noopener">
-                <i class="bi ${l.icon || 'bi-link-45deg'}"></i> ${l.text}
-            </a>`
-        ).join('') + '</div>';
+        return `<div class="${prefix}-card-links">` + links.map(l => {
+            const text = l.text || l.url || 'Link';
+            const icon = l.icon || 'bi-link-45deg';
+            return `<a class="${prefix}-card-link" href="${l.url || '#'}" target="_blank" rel="noopener">
+                <i class="bi ${icon}"></i> ${escapeHtml(text)}
+            </a>`;
+        }).join('') + '</div>';
     }
 
     // ================================================================
@@ -295,33 +297,53 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     function renderProjectCard(project, index) {
-        return `
-        <div class="project-card">
-            <div class="project-card-header">
-                <span class="project-card-title">${project.title}</span>
-                <span class="pub-card-status status-${project.statusClass || 'working'}">${project.status}</span>
-            </div>
-            ${renderTechTags(project.technologies)}
-            <div class="project-description">
-                <div class="project-description-label">
-                    <i class="bi bi-info-circle"></i> Overview
+        try {
+            const title = project.title || 'Untitled';
+            const description = project.description || '';
+            const status = project.status || project.statusClass || '';
+            const statusClass = project.statusClass || 'working';
+            const technologies = project.technologies || [];
+            const images = project.images || ['', '', ''];
+            const links = project.links || [];
+            const video = project.video || '';
+
+            return `
+            <div class="project-card">
+                <div class="project-card-header">
+                    <span class="project-card-title">${escapeHtml(title)}</span>
+                    ${status ? `<span class="pub-card-status status-${statusClass}">${escapeHtml(status)}</span>` : ''}
                 </div>
-                ${project.description}
-            </div>
-            ${renderVideoSlot(project.video)}
-            <div class="project-image-gallery">
-                ${renderImageSlots(project.images, 'project')}
-            </div>
-            ${renderLinks(project.links, 'project')}
-        </div>`;
+                ${renderTechTags(technologies)}
+                <div class="project-description">
+                    <div class="project-description-label">
+                        <i class="bi bi-info-circle"></i> Overview
+                    </div>
+                    ${escapeHtml(description)}
+                </div>
+                ${renderVideoSlot(video)}
+                <div class="project-image-gallery">
+                    ${renderImageSlots(images, 'project')}
+                </div>
+                ${renderLinks(links, 'project')}
+            </div>`;
+        } catch (e) {
+            console.error('Error rendering project card', index, project, e);
+            return `<div class="project-card" style="border-left-color:#e74c3c;"><p>Error rendering: ${escapeHtml(project.title || 'Unknown')}</p></div>`;
+        }
     }
 
     function renderProjects() {
         const container = document.getElementById('projects-md');
-        if (!container) return;
+        if (!container) {
+            console.error('projects-md container not found');
+            return;
+        }
 
         fetch(content_dir + 'projects.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                return response.json();
+            })
             .then(data => {
                 const projects = data.projects || [];
                 if (projects.length === 0) {
@@ -333,17 +355,18 @@ window.addEventListener('DOMContentLoaded', event => {
                     return;
                 }
                 const countHtml = `<div class="pub-count">${projects.length} project${projects.length > 1 ? 's' : ''}</div>`;
-                container.innerHTML = countHtml + projects.map((p, i) => renderProjectCard(p, i)).join('');
+                const cardsHtml = projects.map((p, i) => renderProjectCard(p, i)).join('');
+                container.innerHTML = countHtml + cardsHtml;
 
                 if (typeof MathJax !== 'undefined' && typeof MathJax.typeset === 'function') {
                     MathJax.typeset([container]);
                 }
             })
             .catch(error => {
-                console.log('Projects JSON load error:', error);
+                console.error('Projects load error:', error);
                 const pc = document.getElementById('projects-md');
                 if (pc) pc.innerHTML =
-                    '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load projects.</p></div>';
+                    '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load projects: ' + escapeHtml(error.message) + '</p></div>';
             });
     }
 

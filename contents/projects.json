@@ -2,11 +2,15 @@
   "projects": [
     {
       "title": "Group Research",
-      "description": "A document analysis pipeline leveraging large language models to extract structured insights from unstructured financial reports. The system combines retrieval-augmented generation (RAG) with fine-tuned embeddings to achieve high-accuracy entity recognition and relation extraction across multiple document formats.",
-      "links": [{"url": "https://group-research-nu7erqc05-vacucitys-projects.vercel.app/login"}
+      "description": "Addressing the common challenge in research where numerous ideas fail to materialise due to fragmentation—such as inspiration scattered across memos and discussions confined to chat logs—this project aims to create a one-stop research collaboration application. It integrates scattered keywords into coherent research concepts and automates literature retrieval, management and analysis. The long-term goal is to cover the entire research lifecycle, from the 'germination of an idea' to the 'publication of a paper'.",
+      "technologies": ["React", "Node.js", "MongoDB", "AI/LLM"],
+      "status": "In Progress",
+      "statusClass": "working",
+      "links": [
+        {"text": "Live Demo", "url": "https://group-research-nu7erqc05-vacucitys-projects.vercel.app/login", "icon": "bi-globe"}
       ],
-      "video": "static/assets/Video/Group Research.mp4",
-      "images": ["static/assets/img/Group research1.png", "static/assets/img/Group Research2.png", "static/assets/img/Group Research3.png"]
+      "video": "static/assets/Video/Group Research video.mp4",
+      "images": ["static/assets/img/Group research 1.png", "static/assets/img/Group Research 2.png", "static/assets/img/Group Research 3.png"]
     }
   ]
 }
