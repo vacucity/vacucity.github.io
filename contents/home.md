@@ -14,5 +14,5 @@
 
 #### Research Interests
 - <strong>Economic： Labor, Innovation, etc.</strong>
-- <strong>LLM: Multimodal, etc.</strong>
+- <strong>LLM: Multimodal Metaphor Detection, Multimodal Information Fusion etc.</strong>
 

@@ -4,7 +4,7 @@
 - <stfong>Chujie Wang</stfong>*,Yan Song, YuXuan Lin, KangYing Huang, The Capital Response to the "Green Signal": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?, <strong>《Research in International Business and Finance》</strong> <strong>Under review </strong>
 
 - <stfong>Chujie Wang</stfong>*,Tianhao Zhang, Can Judicial Deterrence Curb Corporate “Say-Do Discrepancies”?
-—A Quasi-Natural Experiment from the Environmental Courts, <strong>《Journal of Business Research》</strong> <strong> Under review  </strong>
+—A Quasi-Natural Experiment from the Environmental Courts, <strong>《Journal of Business Ethics》</strong> <strong> Under review  </strong>
 
 
 #### Published

@@ -1,0 +1,100 @@
+{
+  "economic": [
+    {
+      "title": "The Influence Mechanism of Corporate Strategic Consensus on Organizational Resilience Based on a Moderated Mediating Model",
+      "authors": "Xincheng Y, Bencheng Y, ChuJie Wang",
+      "journal": "Times Trade",
+      "status": "Published",
+      "statusClass": "published",
+      "links": [{"text": "Paper", "url": "https://qikan.cqvip.com/Qikan/Article/Detail?id=7113393087"}],
+      "abstract": "In a market characterised by VUCA conditions, the ability of enterprises to build organisational resilience has become key to gaining a competitive edge. Based on survey data from 540 logistics enterprises, this paper constructs a moderated mediation model and employs multiple regression analysis and the Bootstrap method to test hypotheses, thereby empirically analysing the impact of the degree of strategic consensus on organisational resilience. The findings indicate that strategic consensus enhances employees’ perception of the organisation’s digitalisation, and that this perception in turn strengthens organisational resilience. Furthermore, the higher a company’s level of digitalisation, the greater the impact of strategic consensus on employees’ perception of the organisation’s digitalisation. This study not only explores the intrinsic mechanisms linking organisational strategic consensus and organisational resilience from a theoretical perspective but also provides practical guidance and recommendations for companies on how to prioritise employee organisational management.",
+      "images": ["", "", ""]
+    },
+    {
+      "title": "Digital Transformation and Stock Market Manipulation: Evidence from High-frequency Trading Data",
+      "authors": "Yongjian H, Deheng X, ChuJie Wang",
+      "journal": "Applied Economics",
+      "status": "Published",
+      "statusClass": "published",
+      "links": [{"text": "Paper", "url": "https://doi.org/10.1080/00036846.2025.2575854"}],
+      "abstract": "Using manipulation constructed by high-frequency trading data, we find that enterprise digital transformation  is associated with increased risks of stock market manipulation. And this result holds after a series of robustness and endogeneity tests. Further analysis indicates that this effect only exists in continuous trading manipulation, compared with opening and closing price manipulation. And enterprise digital transformation plays role by increasing the turnover in stock market, reducing the third-party qualification verification and enhancing corporate information opacity. Additionally, this effect will be stronger in enterprises with less external concern, less female executives and little size.",
+      "images": ["", "", ""]
+    },
+    {
+      "title": "Government Open Data and Corporate Risk-Taking: Evidence from China",
+      "authors": "ShuJin Cui, ChuJie Wang, Qin Ye, ZhuoHuan He",
+      "journal": "Financial Research Letter",
+      "status": "Published",
+      "statusClass": "published",
+      "links": [{"text": "Paper", "url": "https://www.sciencedirect.com/science/article/abs/pii/S1544612326004447"}],
+      "abstract": "In the era of the digital economy, government data openness plays a pivotal role in enhancing information transparency and reshaping firms’ strategic behavior. Using the staggered establishment of municipal open-data platforms in China as a quasi-natural experiment, this paper investigates the causal impact of government data openness on corporate risk-taking behavior. Based on a panel dataset of Chinese A-share listed firms from 2008 to 2022 and employing a staggered difference-in-differences (DID) model, we find that government data openness significantly increases firms’ risk-taking levels. And this result holds after a series of robustness and endogeneity tests. Mechanism tests reveal that open data promotes risk-taking by reducing information asymmetry, alleviating economic policy uncertainty, and enhancing managerial risk preference. Further heterogeneity analyses show that the positive effect is more pronounced among technology-intensive firms and in regions with stronger digital infrastructure. Overall, this study highlights the crucial role of data openness in fostering corporate dynamism and provides novel evidence on the economic consequences of digital governance.",
+      "images": ["", "", ""]
+    },
+
+    {
+      "title": "The Capital Response to the \"Green Signal\": How Does the Recognition of Green Factories Mitigate ESG Rating Disagreements?",
+      "authors": "Chujie Wang, Yan Song, YuXuan Lin, KangYing Huang",
+      "journal": "Research in International Business and Finance",
+      "status": "Under Review",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract": "This study examines how government-led green certification reduces ESG rating divergence among third-party evaluators. Using unique data on Chinese listed firms from 2010 to 2023 and a difference-in-differences approach, we find official Green Factory recognition markedly narrows cross-agency ESG rating discrepancies. This result is robust to alternative specifications, propensity score matching, and placebo tests. Mechanism analysis reveals the program eases information asymmetry by enhancing the credibility and transparency of corporate environmental disclosures, aligning external assessors' judgments of firms' sustainability performance. The mitigation of ESG disagreement is more pronounced in heavy-polluting industries and firms with initially poor disclosure quality, underscoring the policy's role in leveling the informational playing field. Our findings contribute to sustainable finance literature, showing state-backed green signals effectively coordinate fragmented private ESG evaluation systems. We also provide empirical evidence for synergistic governance between public environmental regulation and market-driven sustainability assessments. ",
+      "images": ["", "", ""]
+    },
+    {
+      "title": "Can Judicial Deterrence Curb Corporate \"Say-Do Discrepancies\"? A Quasi-Natural Experiment from the Environmental Courts",
+      "authors": "Chujie Wang, Tianhao Zhang",
+      "journal": "Journal of Business Ethics",
+      "status": "Under Review",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract":"Against the backdrop of global green development and China's sustainable economic transition, many firms exaggerate green-transition disclosures to cater to national strategies and capital market preferences, leading to a severe “say-do gap” . Based on signaling theory, this study uses the phased establishment of environmental courts in 208 prefecture-level cities as a quasi-natural experiment, adopting a staggered DID design with 2007-2023 panel data of Chinese A-share listed firms for empirical tests. Results show widespread corporate green pandering, with improved disclosure not translating into actual carbon reduction. Environmental courts effectively curb this behavior, with environmental litigation risk as the core mediating channel. Heterogeneity tests reveal stronger deterrence in regions with weaker regulation/heavier pollution and polluting firms with stronger environmental technology. This study enriches literature from a judicial deterrence perspective and provides implications for substantive corporate green transition.",
+      "images":["", "", ""]
+    },
+
+    {
+      "title": "Digital Tax Governance: Can Tax Authority Official Accounts Curb Corporate Tax Violations?",
+      "authors": "Linze L, Zhiqi Z, Chujie W, Xinyang L",
+      "journal": "Corporate governance: an international review",
+      "status": "Selected into The Fifth XiangZhang Finance Forum (Outstanding Undergraduate Paper Award) & The 11th China Finance Forum",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract": "As tax administration increasingly embraces digitalization, understanding whether and how digital platforms govern corporate tax behavior is critical. Exploiting the staggered rollout of “Tax Official Accounts” across Chinese cities as a quasi-natural experiment, this study investigates the impact of governmental social media on corporate tax noncompliance. We find that the launch of these platforms significantly reduces tax violations, particularly severe, subjectively malicious tax evasion. To unpack this governance effect, we adjudicate between two competing channels: mitigating information frictions versus elevating reputational deterrence. Our findings suggest that market-based deterrence plays a dominant role, while the information-friction channel is not empirically supported. Corroborating this, the deterrent effect is significantly stronger for non-state-owned enterprises, firms in highly marketized and legalized regions, and those with lower operational uncertainty. Overall, we demonstrate that low-cost, public-facing digital media can effectively crowdsource tax enforcement, facilitating a paradigm shift from pure administrative regulation to collaborative market supervision.",
+      "images": ["static/assets/img/Digital Tax1.png", "static/assets/img/Digital Tax 2.png", "static/assets/img/Digital Tax 2.png", "static/assets/img/Digital Tax 3.png"]
+    },
+
+    {
+      "title": "Data Asset Mismatch in the Digital Economy: A Dynamic Investment Perspective",
+      "authors": "Chujie W, Menghan Z, Zhuohuan H, Zhiqi Z",
+      "journal": "Working Paper",
+      "status": "Selected into The 2026 CES China Annual Conference, 2026 Camphor Tree Economics Annual Conference",
+      "statusClass": "working",
+      "links": [],
+      "abstract": "In the digital economy, data is a strategic asset, yet its returns often mismatch with infrastructure investment. This paper develops a dynamic framework modeling data as informational capital that improves productivity beliefs through learning. Firms jointly invest in physical and data capital under adjustment costs. Data enhances production by refining knowledge and improving capital allocation. Optimal data accumulation balances user cost against marginal informational gains. The model yields two equilibria: a “data poverty” trap from low marginal returns, and a “data hoarding” equilibrium where persistent value drives excessive accumulation and entry barriers. These findings explain data-asset mismatches in digital economies and contribute to the literature on data economics",
+      "images": ["", "", ""]
+    },
+
+    {
+      "title": "The Effect of the Minimum Wage: Why Do the Top Waves Splash Higher When a Stone Hits the Water?",
+      "authors": "Chujie W, Zichen F, Ye Q, Zixuan Ling",
+      "journal": "Working Paper",
+      "status": "Selected into The 9th Annual Conference on Labor Economics",
+      "statusClass": "working",
+      "links": [],
+      "abstract": "Based on microdata from Chinese A-share listed companies between 2005 and 2021, this study constructs a profit-maximisation model for firms with a heterogeneous labour force. Using a multi-period difference-in-differences method, it systematically assesses the impact of minimum wage adjustments on average employee wages and internal wage gaps. The findings reveal that increases in the minimum wage generally lead to a significant rise in employee wage levels, but exhibit an ‘inverted U-shaped’ pattern: once the ratio of the minimum wage to the average wage exceeds approximately 0.6578, its ‘floor-raising’ effect gradually weakens or even turns negative. Concurrently, to maintain internal incentive systems, firms commonly engage in ‘top-up’ behaviour by simultaneously increasing executive remuneration, thereby widening internal wage gaps—a phenomenon particularly pronounced in family-owned enterprises. Mechanism tests indicate that minimum wage adjustments influence firm resource allocation through channels such as adjustments to the wage structure, optimisation of the employee structure, and increased labour intensity, whilst the ‘capital substitution’ channel is not significant. Furthermore, the policy’s effects exhibit heterogeneity across regions, ownership types and industry sectors, with non-state-owned enterprises, labour-intensive enterprises and the eastern region being more sensitive to the policy. The findings of this paper reveal the complexities of redistribution underlying minimum wage policies and propose that policy design should be optimised on a case-by-case basis to prevent distortions in incentive structures and promote the coordinated development of fairness and efficiency in corporate income distribution.",
+      "images": ["", "", ""]
+    },
+
+    {
+      "title": "The Reconstruction of Knowledge Flow: Strategic Alliances and Corporate Technological Dependence",
+      "authors": "Chujie W, Zichen F, Chenxu Q",
+      "journal": "Working Paper",
+      "status": "Selected into China Technology and Economy Forum 2025 Xi'an",
+      "statusClass": "working",
+      "links": [],
+      "abstract": "Against a backdrop of increasingly fierce global technological competition and dwindling corporate innovation resources, technological dependence has become a key bottleneck constraining the enhancement of enterprises’ independent innovation capabilities and their sustainable development. Whilst strategic alliances serve as a vital organisational form for enterprises to integrate external resources and enhance their technological capabilities, the intrinsic relationship between such alliances and the degree of technological dependence has not yet been fully elucidated. Drawing on data from A-share listed companies between 2006 and 2022, this paper adopts a new perspective—that of ‘Technology Dependency Ratio’ (TDR)—to examine the impact of corporate participation in strategic alliances on their level of technological dependency. By constructing a Technology Dependency Ratio (TDR = knowledge input/knowledge output) based on patent citation data and establishing a two-stage decision-making model, this paper finds that strategic alliances predominantly reduce firms’ technology dependency through an ‘efficiency effect’, driving a shift from ‘net knowledge absorbers’ to ‘net knowledge exporters’. Mechanism analysis indicates that alliances restructure the direction of corporate knowledge flows by promoting knowledge output, enhancing innovation efficiency, and optimising cooperation channels (such as industry-academia-research and business networks). Heterogeneity analysis further reveals that this effect is particularly pronounced in technology-intensive firms, mature-stage firms, and alliances focused on technological cooperation and resource development. This paper not only fills a research gap regarding the relationship between strategic alliances and technological dependence, but also provides theoretical foundations and practical guidance for firms to optimise alliance strategies within innovation networks and for governments to formulate differentiated support policies.",
+      "images": ["", "", ""]
+    }
+  ],
+  "ai": []
+}
