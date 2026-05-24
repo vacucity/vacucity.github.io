@@ -1,29 +1,43 @@
 @import "./styles.css";
 
-
-:root{
-    --h-title-color:#3948d2;
+:root {
+    --h-title-color: #1a237e;
+    --accent-gold: #b8860b;
+    --accent-light: #e8eaf6;
+    --card-shadow: 0 2px 12px rgba(26, 35, 126, 0.06);
+    --card-shadow-hover: 0 6px 28px rgba(26, 35, 126, 0.12);
+    --text-primary: #1a1a2e;
+    --text-secondary: #5a5a7a;
+    --border-light: #e2e4f0;
+    --status-review: #e65100;
+    --status-published: #2e7d32;
+    --status-working: #1565c0;
 }
 
+/* ===== Navigation ===== */
 .header {
-    border-bottom: solid 2px var(--bs-blue);
+    border-bottom: solid 2px var(--h-title-color);
     z-index: 10000;
+    background: rgba(255, 255, 255, 0.97) !important;
+    backdrop-filter: blur(10px);
 }
 
 .bg-bottom {
     background-color: var(--h-title-color);
 }
 
+/* ===== Top Section (Hero) ===== */
 .top-section {
     position: relative;
     padding: 10rem 0;
     background-position: center;
     background-size: cover;
-    height: 25rem;
+    height: 28rem;
 }
 
 .top-section h2 {
     font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
 .top-section .top-section-content {
@@ -38,60 +52,43 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.65) 0%, rgba(0, 0, 0, 0.55) 100%);
 }
 
-section header h2{
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+/* ===== Section Headers ===== */
+section header h2 {
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
     color: var(--h-title-color);
     font-size: 2.3rem;
     line-height: 4rem;
+    margin-bottom: 0.5rem;
 }
 
-section .main-body{
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
+section header {
+    margin-bottom: 1.5rem;
 }
 
+section .main-body {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 2rem;
+    color: var(--text-primary);
+}
 
+/* ===== Section Backgrounds ===== */
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+    background: linear-gradient(160deg, #fafbff 0%, #ffffff 100%) !important;
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+    background: linear-gradient(160deg, #f5f6fa 0%, #fafbff 100%) !important;
 }
 
-
-
-.on-top {
-    position: relative;
-    z-index: 10000;
-}
-
-.top-bg {
-    background-position: center;
-    background-size: fill;
-    width: 100%;
-    height: 100%;
-}
-
-.top-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-
+/* ===== Avatar ===== */
 #avatar {
     position: relative;
     height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    top: min(-65px, max(-100px, calc(-1 * 100vw / 12)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -99,8 +96,9 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(130px, min(200px, calc(100vw / 6)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 991px) {
@@ -109,4 +107,459 @@ section .main-body{
     }
 }
 
+/* ===== Home Section Enhancements ===== */
+#home-md h4 {
+    color: var(--h-title-color);
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent-light);
+}
 
+#home-md strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+#home-md a {
+    color: var(--h-title-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--h-title-color);
+    transition: border-bottom 0.2s ease;
+}
+
+#home-md a:hover {
+    border-bottom: 2px solid var(--h-title-color);
+}
+
+#home-md img[src*="badge"] {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Category Toggle Buttons ===== */
+.pub-toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2.8rem;
+    flex-wrap: wrap;
+}
+
+.pub-toggle-btn {
+    padding: 0.7rem 2.2rem;
+    border: 2px solid var(--border-light);
+    background: white;
+    color: var(--text-secondary);
+    border-radius: 50px;
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.03em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.pub-toggle-btn:hover {
+    border-color: var(--h-title-color);
+    color: var(--h-title-color);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(26, 35, 126, 0.1);
+}
+
+.pub-toggle-btn.active {
+    background: var(--h-title-color);
+    color: white;
+    border-color: var(--h-title-color);
+    box-shadow: 0 4px 14px rgba(26, 35, 126, 0.25);
+}
+
+.pub-toggle-btn.active:hover {
+    background: #283593;
+    border-color: #283593;
+}
+
+.pub-toggle-btn i {
+    font-size: 1.1rem;
+}
+
+/* ===== Publication Cards ===== */
+.pub-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.8rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-light);
+    transition: box-shadow 0.35s ease, transform 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pub-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--h-title-color);
+    border-radius: 0;
+}
+
+.pub-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-3px);
+}
+
+/* Card Header: Title + Status */
+.pub-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.pub-card-title {
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.5;
+    flex: 1;
+    min-width: 250px;
+}
+
+.pub-card-status {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: "Mulish", sans-serif;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.status-review {
+    background: #fff3e0;
+    color: var(--status-review);
+    border: 1px solid #ffe0b2;
+}
+
+.status-published {
+    background: #e8f5e9;
+    color: var(--status-published);
+    border: 1px solid #c8e6c9;
+}
+
+.status-working {
+    background: #e3f2fd;
+    color: var(--status-working);
+    border: 1px solid #bbdefb;
+}
+
+/* Authors & Journal */
+.pub-card-authors {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+    font-style: italic;
+}
+
+.pub-card-authors strong {
+    color: var(--h-title-color);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pub-card-journal {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.pub-card-venue {
+    font-size: 0.88rem;
+    color: #777;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+/* ===== Image Gallery ===== */
+.pub-image-gallery {
+    display: flex;
+    gap: 0.9rem;
+    margin: 1.3rem 0;
+}
+
+.pub-image-slot {
+    flex: 1;
+    aspect-ratio: 4 / 3;
+    border: 2px dashed #d5d8e8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b5cc;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: #fafbfe;
+    cursor: pointer;
+    position: relative;
+}
+
+.pub-image-slot:hover {
+    border-color: var(--h-title-color);
+    background: var(--accent-light);
+    color: var(--h-title-color);
+}
+
+.pub-image-slot i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.pub-image-slot:hover i {
+    transform: scale(1.15);
+}
+
+.pub-image-slot.has-image {
+    border-style: solid;
+    border-color: var(--border-light);
+    background: #fff;
+}
+
+.pub-image-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== Abstract Section ===== */
+.pub-abstract {
+    margin-top: 1.3rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.pub-abstract-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+    background: #f8f9fc;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.pub-abstract-header:hover {
+    background: #f0f1f8;
+}
+
+.pub-abstract-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--h-title-color);
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pub-abstract-toggle {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.pub-abstract.open .pub-abstract-toggle {
+    transform: rotate(180deg);
+}
+
+.pub-abstract-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.pub-abstract.open .pub-abstract-body {
+    max-height: 300px;
+}
+
+.pub-abstract-content {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.pub-abstract-content textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 0.7rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: #fafbfe;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.pub-abstract-content textarea:focus {
+    outline: none;
+    border-color: var(--h-title-color);
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.08);
+}
+
+/* ===== Card Links ===== */
+.pub-card-links {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.9rem;
+}
+
+.pub-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.9rem;
+    background: var(--accent-light);
+    color: var(--h-title-color);
+    border-radius: 5px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+}
+
+.pub-card-link:hover {
+    background: var(--h-title-color);
+    color: white;
+}
+
+/* ===== Empty State ===== */
+.pub-empty {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+.pub-empty i {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+}
+
+/* ===== Section Card Count ===== */
+.pub-count {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 1.5rem;
+    font-family: "Mulish", sans-serif;
+}
+
+/* ===== Footer ===== */
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* ===== Awards & Intership Section Enhancements ===== */
+#awards-md ul,
+#Intership-md ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#awards-md li,
+#Intership-md li {
+    position: relative;
+    padding: 0.6rem 0 0.6rem 1.6rem;
+    border-bottom: 1px solid #eee;
+}
+
+#awards-md li::before,
+#Intership-md li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--h-title-color);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .pub-card {
+        padding: 1.2rem 1.2rem;
+    }
+
+    .pub-card-title {
+        font-size: 1.1rem;
+    }
+
+    .pub-image-gallery {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .pub-image-slot {
+        aspect-ratio: 16 / 9;
+    }
+
+    .pub-toggle-btn {
+        padding: 0.55rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    section header h2 {
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+
+    .pub-card-header {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pub-toggle-container {
+        gap: 0.6rem;
+    }
+
+    .pub-toggle-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .pub-card::before {
+        width: 3px;
+    }
+}

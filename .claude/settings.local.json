@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import json; data=open\\('contents/publications.json','r',encoding='utf-8'\\).read\\(\\); json.loads\\(data\\); print\\('JSON valid'\\); print\\(f\\\\\"Economic: {len\\(json.loads\\(data\\)['economic']\\)} papers\\\\\"\\); print\\(f\\\\\"AI: {len\\(json.loads\\(data\\)['ai']\\)} papers\\\\\"\\)\")",
+      "Bash(node -e \"const d = require\\('./contents/publications.json'\\); console.log\\('JSON valid'\\); console.log\\('Economic:', d.economic.length, 'papers'\\); console.log\\('AI:', d.ai.length, 'papers'\\)\")",
+      "Bash(npx --yes http-server -p 8080 -c-1 --silent)"
+    ]
+  }
+}
