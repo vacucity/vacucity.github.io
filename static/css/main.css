@@ -733,26 +733,83 @@ footer a:hover {
     color: white;
 }
 
-/* ===== Awards & Intership Section Enhancements ===== */
-#awards-md ul,
+/* ===== Intership Section ===== */
+#Intership-md h4 {
+    color: var(--h-title-color);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.3rem;
+    padding: 0;
+    border: none;
+}
+
+#Intership-md h4:first-child {
+    margin-top: 0;
+}
+
+#Intership-md em {
+    display: block;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    font-family: "Mulish", sans-serif;
+}
+
 #Intership-md ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+#Intership-md li {
+    position: relative;
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    border-bottom: none;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+#Intership-md li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+}
+
+#Intership-md hr {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 1.3rem 0;
+}
+
+/* ===== Awards Section Enhancements ===== */
+#awards-md ul {
     list-style: none;
     padding-left: 0;
 }
 
-#awards-md li,
-#Intership-md li {
+#awards-md li {
     position: relative;
     padding: 0.6rem 0 0.6rem 1.6rem;
     border-bottom: 1px solid #eee;
+    font-size: 1rem;
 }
 
-#awards-md li::before,
-#Intership-md li::before {
+#awards-md li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 1rem;
+    top: 1.1rem;
     width: 8px;
     height: 8px;
     border-radius: 50%;

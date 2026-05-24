@@ -118,50 +118,83 @@ window.addEventListener('DOMContentLoaded', event => {
         </div>`;
     }
 
+    function escapeHtml(text) {
+        if (!text) return '';
+        return String(text)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
     function renderResearchCard(paper, index) {
-        const statusLabel = paper.statusClass === 'under-review' ? 'Under Review' :
-                           paper.statusClass === 'published' ? paper.status :
-                           paper.status;
-        return `
-        <div class="pub-card">
-            <div class="pub-card-header">
-                <span class="pub-card-title">${paper.title}</span>
-                <span class="pub-card-status status-${paper.statusClass}">${statusLabel}</span>
-            </div>
-            <div class="pub-card-authors">${highlightAuthor(paper.authors)}</div>
-            <div class="pub-card-journal">
-                <i class="bi bi-journal-bookmark-fill"></i>&nbsp; ${paper.journal}
-            </div>
-            ${paper.status && paper.statusClass !== 'published' && paper.statusClass !== 'under-review'
-                ? `<div class="pub-card-venue"><i class="bi bi-geo-alt"></i>&nbsp; ${paper.status}</div>`
-                : ''}
-            <div class="pub-image-gallery">
-                ${renderImageSlots(paper.images, 'pub')}
-            </div>
-            ${renderAbstract(paper.abstract, index)}
-            ${renderLinks(paper.links, 'pub')}
-        </div>`;
+        try {
+            const statusLabel = paper.statusClass === 'under-review' ? 'Under Review' :
+                               paper.statusClass === 'published' ? paper.status :
+                               (paper.status || '');
+            const authors = paper.authors || '';
+            const title = paper.title || 'Untitled';
+            const journal = paper.journal || '';
+            const images = paper.images || ['', '', ''];
+            const links = paper.links || [];
+            const abstract = paper.abstract || '';
+
+            let venueHtml = '';
+            if (paper.status && paper.statusClass !== 'published' && paper.statusClass !== 'under-review') {
+                venueHtml = `<div class="pub-card-venue"><i class="bi bi-geo-alt"></i>&nbsp; ${escapeHtml(paper.status)}</div>`;
+            }
+
+            return `
+            <div class="pub-card">
+                <div class="pub-card-header">
+                    <span class="pub-card-title">${escapeHtml(title)}</span>
+                    <span class="pub-card-status status-${paper.statusClass || 'working'}">${escapeHtml(statusLabel)}</span>
+                </div>
+                <div class="pub-card-authors">${highlightAuthor(authors)}</div>
+                <div class="pub-card-journal">
+                    <i class="bi bi-journal-bookmark-fill"></i>&nbsp; ${escapeHtml(journal)}
+                </div>
+                ${venueHtml}
+                <div class="pub-image-gallery">
+                    ${renderImageSlots(images, 'pub')}
+                </div>
+                ${renderAbstract(abstract, index)}
+                ${renderLinks(links, 'pub')}
+            </div>`;
+        } catch (e) {
+            console.error('Error rendering research card', index, paper, e);
+            return `<div class="pub-card" style="border-left-color:#e74c3c;"><p>Error rendering: ${escapeHtml(paper.title || 'Unknown')}</p></div>`;
+        }
     }
 
     function renderResearch(category) {
-        const container = document.getElementById('research-md');
-        const papers = researchData[category] || [];
+        try {
+            const container = document.getElementById('research-md');
+            if (!container) {
+                console.error('research-md container not found');
+                return;
+            }
+            const papers = researchData[category] || [];
 
-        if (papers.length === 0) {
-            container.innerHTML = `
-                <div class="pub-empty">
-                    <i class="bi bi-inbox"></i>
-                    <p>No papers in this category yet.</p>
-                </div>`;
-            return;
-        }
+            if (papers.length === 0) {
+                container.innerHTML = `
+                    <div class="pub-empty">
+                        <i class="bi bi-inbox"></i>
+                        <p>No papers in this category yet.</p>
+                    </div>`;
+                return;
+            }
 
-        const countHtml = `<div class="pub-count">${papers.length} paper${papers.length > 1 ? 's' : ''}</div>`;
-        const cardsHtml = papers.map((p, i) => renderResearchCard(p, i)).join('');
-        container.innerHTML = countHtml + cardsHtml;
+            const countHtml = `<div class="pub-count">${papers.length} paper${papers.length > 1 ? 's' : ''}</div>`;
+            const cardsHtml = papers.map((p, i) => renderResearchCard(p, i)).join('');
+            container.innerHTML = countHtml + cardsHtml;
 
-        if (typeof MathJax !== 'undefined') {
-            MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err));
+            if (typeof MathJax !== 'undefined' && typeof MathJax.typeset === 'function') {
+                MathJax.typeset([container]);
+            }
+        } catch (e) {
+            console.error('Error rendering research:', e);
         }
     }
 
@@ -302,13 +335,14 @@ window.addEventListener('DOMContentLoaded', event => {
                 const countHtml = `<div class="pub-count">${projects.length} project${projects.length > 1 ? 's' : ''}</div>`;
                 container.innerHTML = countHtml + projects.map((p, i) => renderProjectCard(p, i)).join('');
 
-                if (typeof MathJax !== 'undefined') {
-                    MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err));
+                if (typeof MathJax !== 'undefined' && typeof MathJax.typeset === 'function') {
+                    MathJax.typeset([container]);
                 }
             })
             .catch(error => {
                 console.log('Projects JSON load error:', error);
-                document.getElementById('projects-md').innerHTML =
+                const pc = document.getElementById('projects-md');
+                if (pc) pc.innerHTML =
                     '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load projects.</p></div>';
             });
     }

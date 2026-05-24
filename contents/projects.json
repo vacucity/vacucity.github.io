@@ -1,30 +1,12 @@
 {
   "projects": [
     {
-      "title": "Example Project — LLM-based Document Analysis",
+      "title": "Group Research",
       "description": "A document analysis pipeline leveraging large language models to extract structured insights from unstructured financial reports. The system combines retrieval-augmented generation (RAG) with fine-tuned embeddings to achieve high-accuracy entity recognition and relation extraction across multiple document formats.",
-      "technologies": ["Python", "PyTorch", "LangChain", "FastAPI", "PostgreSQL"],
-      "status": "In Progress",
-      "statusClass": "working",
-      "links": [
-        {"text": "GitHub", "url": "#", "icon": "bi-github"},
-        {"text": "Demo", "url": "#", "icon": "bi-play-circle"}
+      "links": [{"url": "https://group-research-nu7erqc05-vacucitys-projects.vercel.app/login"}
       ],
-      "video": "",
-      "images": ["", "", ""]
-    },
-    {
-      "title": "Example Project — Economic Data Visualization Dashboard",
-      "description": "An interactive web dashboard for visualizing regional economic indicators and policy impacts. Built with a focus on reproducibility and real-time data integration, enabling researchers and policymakers to explore complex economic relationships through intuitive visual interfaces.",
-      "technologies": ["JavaScript", "D3.js", "Python", "Flask", "MongoDB"],
-      "status": "Completed",
-      "statusClass": "published",
-      "links": [
-        {"text": "GitHub", "url": "#", "icon": "bi-github"},
-        {"text": "Live Site", "url": "#", "icon": "bi-globe"}
-      ],
-      "video": "",
-      "images": ["", "", ""]
+      "video": "static/assets/Video/Group Research.mp4",
+      "images": ["static/assets/img/Group research1.png", "static/assets/img/Group Research2.png", "static/assets/img/Group Research3.png"]
     }
   ]
 }
