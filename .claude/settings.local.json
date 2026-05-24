@@ -3,7 +3,15 @@
     "allow": [
       "Bash(python -c \"import json; data=open\\('contents/publications.json','r',encoding='utf-8'\\).read\\(\\); json.loads\\(data\\); print\\('JSON valid'\\); print\\(f\\\\\"Economic: {len\\(json.loads\\(data\\)['economic']\\)} papers\\\\\"\\); print\\(f\\\\\"AI: {len\\(json.loads\\(data\\)['ai']\\)} papers\\\\\"\\)\")",
       "Bash(node -e \"const d = require\\('./contents/publications.json'\\); console.log\\('JSON valid'\\); console.log\\('Economic:', d.economic.length, 'papers'\\); console.log\\('AI:', d.ai.length, 'papers'\\)\")",
-      "Bash(npx --yes http-server -p 8080 -c-1 --silent)"
+      "Bash(npx --yes http-server -p 8080 -c-1 --silent)",
+      "Bash(python -m http.server 8080)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" status)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" log --oneline -5)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" status -u)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" diff index.html)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" add index.html)",
+      "Bash(git -C c:/Users/23017/Documents/GitHub/vacucity.github.io commit -m 'add cache-busting version params for main.css and scripts.js')",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" push origin main)"
     ]
   }
 }

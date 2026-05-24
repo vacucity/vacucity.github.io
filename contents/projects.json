@@ -7,7 +7,7 @@
       "status": "In Progress",
       "statusClass": "working",
       "links": [
-        {"text": "Live Demo", "url": "https://group-research-nu7erqc05-vacucitys-projects.vercel.app/login", "icon": "bi-globe"}
+        {"text": "Live Demo", "url": "https://group-research.vercel.app/register", "icon": "bi-globe"}
       ],
       "video": "static/assets/Video/Group Research video.mp4",
       "images": ["static/assets/img/Group research 1.png", "static/assets/img/Group Research 2.png", "static/assets/img/Group Research 3.png"]
