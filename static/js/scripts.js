@@ -1,6 +1,6 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'awards', 'Intership']
+const section_names = ['home', 'research', 'projects', 'awards', 'Intership']
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -44,8 +44,8 @@ window.addEventListener('DOMContentLoaded', event => {
     // Marked - load markdown sections (home, awards, internship)
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name) => {
-        // Skip publications - handled by JSON renderer
-        if (name === 'publications') return;
+        // Skip research & projects - handled by JSON renderers
+        if (name === 'research' || name === 'projects') return;
 
         fetch(content_dir + name + '.md')
             .then(response => response.text())
@@ -58,44 +58,49 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-    // === Publications: Load JSON and render cards ===
-    let publicationsData = { economic: [], ai: [] };
-    let currentCategory = 'economic';
-
+    // === Shared helper: highlight author name ===
     function highlightAuthor(authors) {
         return authors.replace(/\b(Chujie\s*W\.?|Chujie\s*Wang|ChuJie\s*Wang)\b/gi,
             '<strong>Chujie Wang</strong>');
     }
 
-    function renderImageSlots(images) {
+    // === Shared helper: render image slots ===
+    function renderImageSlots(images, prefix) {
         if (!images || images.length === 0) {
             images = ['', '', ''];
         }
         return images.map((img, i) => {
             if (img) {
-                return `<div class="pub-image-slot has-image" data-index="${i}">
+                return `<div class="${prefix}-image-slot has-image" data-index="${i}">
                     <img src="${img}" alt="Figure ${i + 1}" loading="lazy">
                 </div>`;
             }
-            return `<div class="pub-image-slot" data-index="${i}" title="Click to add image">
+            return `<div class="${prefix}-image-slot" data-index="${i}" title="Click to add image">
                 <i class="bi bi-image"></i>
             </div>`;
         }).join('');
     }
 
-    function renderLinks(links) {
+    // === Shared helper: render links ===
+    function renderLinks(links, prefix) {
         if (!links || links.length === 0) return '';
-        return '<div class="pub-card-links">' + links.map(l =>
-            `<a class="pub-card-link" href="${l.url}" target="_blank" rel="noopener">
-                <i class="bi bi-link-45deg"></i> ${l.text}
+        return `<div class="${prefix}-card-links">` + links.map(l =>
+            `<a class="${prefix}-card-link" href="${l.url}" target="_blank" rel="noopener">
+                <i class="bi ${l.icon || 'bi-link-45deg'}"></i> ${l.text}
             </a>`
         ).join('') + '</div>';
     }
 
-    function renderAbstract(abstract, paperIndex) {
+    // ================================================================
+    // === RESEARCH: Load JSON and render cards ===
+    // ================================================================
+    let researchData = { economic: [], ai: [] };
+    let currentCategory = 'economic';
+
+    function renderAbstract(abstract, index) {
         const hasContent = abstract && abstract.trim().length > 0;
         return `
-        <div class="pub-abstract" data-paper="${paperIndex}">
+        <div class="pub-abstract" data-paper="${index}">
             <div class="pub-abstract-header" onclick="this.parentElement.classList.toggle('open')">
                 <span class="pub-abstract-label">
                     <i class="bi bi-journal-text"></i> Abstract
@@ -113,7 +118,7 @@ window.addEventListener('DOMContentLoaded', event => {
         </div>`;
     }
 
-    function renderPubCard(paper, index) {
+    function renderResearchCard(paper, index) {
         const statusLabel = paper.statusClass === 'under-review' ? 'Under Review' :
                            paper.statusClass === 'published' ? paper.status :
                            paper.status;
@@ -131,16 +136,16 @@ window.addEventListener('DOMContentLoaded', event => {
                 ? `<div class="pub-card-venue"><i class="bi bi-geo-alt"></i>&nbsp; ${paper.status}</div>`
                 : ''}
             <div class="pub-image-gallery">
-                ${renderImageSlots(paper.images)}
+                ${renderImageSlots(paper.images, 'pub')}
             </div>
             ${renderAbstract(paper.abstract, index)}
-            ${renderLinks(paper.links)}
+            ${renderLinks(paper.links, 'pub')}
         </div>`;
     }
 
-    function renderPublications(category) {
-        const container = document.getElementById('publications-md');
-        const papers = publicationsData[category] || [];
+    function renderResearch(category) {
+        const container = document.getElementById('research-md');
+        const papers = researchData[category] || [];
 
         if (papers.length === 0) {
             container.innerHTML = `
@@ -151,11 +156,10 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
 
-        const countHtml = `<div class="pub-count">${papers.length} publication${papers.length > 1 ? 's' : ''}</div>`;
-        const cardsHtml = papers.map((p, i) => renderPubCard(p, i)).join('');
+        const countHtml = `<div class="pub-count">${papers.length} paper${papers.length > 1 ? 's' : ''}</div>`;
+        const cardsHtml = papers.map((p, i) => renderResearchCard(p, i)).join('');
         container.innerHTML = countHtml + cardsHtml;
 
-        // Re-trigger MathJax for any math content
         if (typeof MathJax !== 'undefined') {
             MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err));
         }
@@ -168,33 +172,148 @@ window.addEventListener('DOMContentLoaded', event => {
                 buttons.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentCategory = this.dataset.category;
-                renderPublications(currentCategory);
+                renderResearch(currentCategory);
             });
         });
     }
 
-    // Load publication data and render
-    fetch(content_dir + 'publications.json')
+    // Load research data
+    fetch(content_dir + 'Research.json')
         .then(response => response.json())
         .then(data => {
-            publicationsData = data;
+            researchData = data;
             setupToggleButtons();
-            renderPublications(currentCategory);
+            renderResearch(currentCategory);
         })
         .catch(error => {
-            console.log('Publications JSON load error:', error);
-            // Fallback: try loading markdown
-            fetch(content_dir + 'publications.md')
-                .then(response => response.text())
-                .then(markdown => {
-                    const html = marked.parse(markdown);
-                    document.getElementById('publications-md').innerHTML = html;
-                    MathJax.typeset();
-                })
-                .catch(() => {
-                    document.getElementById('publications-md').innerHTML =
-                        '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load publications.</p></div>';
-                });
+            console.log('Research JSON load error:', error);
+            document.getElementById('research-md').innerHTML =
+                '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load research.</p></div>';
         });
+
+    // ================================================================
+    // === PROJECTS: Load JSON and render cards ===
+    // ================================================================
+
+    function renderVideoSlot(video) {
+        if (!video || video.trim() === '') {
+            return `
+            <div class="project-video-slot">
+                <div class="project-video-placeholder" title="Add a video URL (YouTube, Bilibili, or direct video link)">
+                    <i class="bi bi-play-btn"></i>
+                    <span>Add demo video (YouTube / Bilibili / MP4)</span>
+                </div>
+            </div>`;
+        }
+
+        // YouTube embed
+        const ytMatch = video.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]+)/);
+        if (ytMatch) {
+            return `
+            <div class="project-video-slot has-video">
+                <iframe src="https://www.youtube.com/embed/${ytMatch[1]}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen title="Project Demo Video"></iframe>
+            </div>`;
+        }
+
+        // Bilibili embed
+        const blMatch = video.match(/bilibili\.com\/video\/(BV[a-zA-Z0-9]+|av\d+)/);
+        if (blMatch) {
+            const bvid = blMatch[1].startsWith('BV') ? blMatch[1] : null;
+            const aid = blMatch[1].startsWith('av') ? blMatch[1].slice(2) : null;
+            const embedSrc = bvid
+                ? `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1`
+                : `https://player.bilibili.com/player.html?aid=${aid}&page=1&high_quality=1`;
+            return `
+            <div class="project-video-slot has-video">
+                <iframe src="${embedSrc}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen title="Project Demo Video" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+            </div>`;
+        }
+
+        // Direct video file (MP4, WebM, etc.)
+        if (video.match(/\.(mp4|webm|ogg|mov)(\?|$)/i) || video.startsWith('static/')) {
+            return `
+            <div class="project-video-slot has-video">
+                <video controls preload="metadata" title="Project Demo Video">
+                    <source src="${video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>`;
+        }
+
+        // Fallback: treat as a link
+        return `
+        <div class="project-video-slot has-video">
+            <div class="project-video-placeholder" style="flex-direction:row; gap:1rem;">
+                <i class="bi bi-box-arrow-up-right"></i>
+                <span>Open: <a href="${video}" target="_blank" rel="noopener">${video}</a></span>
+            </div>
+        </div>`;
+    }
+
+    function renderTechTags(technologies) {
+        if (!technologies || technologies.length === 0) return '';
+        return '<div class="project-tech-tags">' +
+            technologies.map(t => `<span class="project-tech-tag">${t}</span>`).join('') +
+            '</div>';
+    }
+
+    function renderProjectCard(project, index) {
+        return `
+        <div class="project-card">
+            <div class="project-card-header">
+                <span class="project-card-title">${project.title}</span>
+                <span class="pub-card-status status-${project.statusClass || 'working'}">${project.status}</span>
+            </div>
+            ${renderTechTags(project.technologies)}
+            <div class="project-description">
+                <div class="project-description-label">
+                    <i class="bi bi-info-circle"></i> Overview
+                </div>
+                ${project.description}
+            </div>
+            ${renderVideoSlot(project.video)}
+            <div class="project-image-gallery">
+                ${renderImageSlots(project.images, 'project')}
+            </div>
+            ${renderLinks(project.links, 'project')}
+        </div>`;
+    }
+
+    function renderProjects() {
+        const container = document.getElementById('projects-md');
+        if (!container) return;
+
+        fetch(content_dir + 'projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const projects = data.projects || [];
+                if (projects.length === 0) {
+                    container.innerHTML = `
+                        <div class="pub-empty">
+                            <i class="bi bi-inbox"></i>
+                            <p>No projects yet.</p>
+                        </div>`;
+                    return;
+                }
+                const countHtml = `<div class="pub-count">${projects.length} project${projects.length > 1 ? 's' : ''}</div>`;
+                container.innerHTML = countHtml + projects.map((p, i) => renderProjectCard(p, i)).join('');
+
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise([container]).catch(err => console.log('MathJax error:', err));
+                }
+            })
+            .catch(error => {
+                console.log('Projects JSON load error:', error);
+                document.getElementById('projects-md').innerHTML =
+                    '<div class="pub-empty"><i class="bi bi-exclamation-triangle"></i><p>Failed to load projects.</p></div>';
+            });
+    }
+
+    // Load projects
+    renderProjects();
 
 });
