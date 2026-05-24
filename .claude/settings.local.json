@@ -11,7 +11,10 @@
       "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" diff index.html)",
       "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" add index.html)",
       "Bash(git -C c:/Users/23017/Documents/GitHub/vacucity.github.io commit -m 'add cache-busting version params for main.css and scripts.js')",
-      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" push origin main)"
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" push origin main)",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" ls-files \"static/assets/img/\")",
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" add contents/Research.json)",
+      "Bash(git -C c:/Users/23017/Documents/GitHub/vacucity.github.io commit -m 'fix: Knowledge1.png -> knowledge1.png case sensitivity for Linux server')"
     ]
   }
 }
