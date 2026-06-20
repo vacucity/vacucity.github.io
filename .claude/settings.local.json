@@ -15,7 +15,16 @@
       "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" ls-files \"static/assets/img/\")",
       "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" add contents/Research.json)",
       "Bash(git -C c:/Users/23017/Documents/GitHub/vacucity.github.io commit -m 'fix: Knowledge1.png -> knowledge1.png case sensitivity for Linux server')",
-      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" diff contents/Research.json)"
+      "Bash(git -C \"c:/Users/23017/Documents/GitHub/vacucity.github.io\" diff contents/Research.json)",
+      "Bash(gh repo *)",
+      "Bash(curl -s https://api.github.com/repos/vacucity/vacucity.github.io)",
+      "Bash(curl -s https://api.github.com/repos/vacucity/vacucity.github.io/pages)",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -sI -o /dev/null -w \"HTTP Status: %{http_code}\\\\nRedirect: %{redirect_url}\\\\n\" https://vacucity.github.io/)",
+      "Bash(curl -sI https://vacucity.github.io/)",
+      "Bash(curl -sv https://vacucity.github.io/)",
+      "Bash(curl -s https://api.github.com/repos/vacucity/vacucity.github.io/pages/builds/latest)",
+      "Bash(curl -s \"https://api.github.com/repos/vacucity/vacucity.github.io/actions/workflows\")"
     ]
   }
 }
