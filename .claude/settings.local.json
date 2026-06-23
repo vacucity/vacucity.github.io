@@ -24,7 +24,13 @@
       "Bash(curl -sI https://vacucity.github.io/)",
       "Bash(curl -sv https://vacucity.github.io/)",
       "Bash(curl -s https://api.github.com/repos/vacucity/vacucity.github.io/pages/builds/latest)",
-      "Bash(curl -s \"https://api.github.com/repos/vacucity/vacucity.github.io/actions/workflows\")"
+      "Bash(curl -s \"https://api.github.com/repos/vacucity/vacucity.github.io/actions/workflows\")",
+      "WebFetch(domain:vacucity.github.io)",
+      "Bash(git log *)",
+      "Bash(curl -sI -4 https://vacucity.github.io/)",
+      "Bash(curl -s \"https://vacucity.github.io\" -4 --connect-timeout 10 -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://vacucity.github.io/contents/Research.json\" -4 --connect-timeout 10 -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -sv \"https://vacucity.github.io/contents/Research.json\" -4 --connect-timeout 10 -H \"User-Agent: Mozilla/5.0\")"
     ]
   }
 }
