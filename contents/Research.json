@@ -82,7 +82,7 @@
     "status": "We are going to submit to AAAI",
     "statusClass": "working",
     "abstract": "Multimodal metaphor detection requires cross‑modal reasoning, yet computational effort need not be uniform. We present HRA (Hierarchical Reasoning Allocation), a routing framework that dynamically decides visual usage via a two‑stage gate: Stage 1 determines image necessity; Stage 2 selects a Visual Expert or Cross‑Modal Expert for image‑dependent samples. Three mechanism‑aware experts, fed with distinct inputs, enable specialization without parameter growth. Experiments across two backbones (CLIP, SigLIP) and three distributions (in‑domain, cross‑lingual, cross‑dataset) show HRA achieves statistically identical accuracy to the strongest static MoE baseline while reducing computation by 31% through selective image encoding. Ablations confirm hierarchical routing stabilizes weaker backbones, and expert‑specific inputs yield consistent gains. Anytime‑inference tests show stable accuracy across all image‑usage ratios. Qualitative results indicate routing decisions are interpretable and correlate with human‑annotated metaphor categories. Overall, we argue adaptive routing in multimodal models should be reframed as an efficiency and interpretability mechanism—a conclusion robust to two backbones and three distribution shifts.",
-    "images": ["static/assets/img/fig1_p_need_histogram.png", "static/assets/img/fig3_routing_accuracy.png", "static/assets/img/fig4_f1_vs_p_need.png"]
+    "images": ["static/assets/img/Case study.png", "static/assets/img/Framework.png", "static/assets/img/Pareto.png"]
     }
   ]
 }
