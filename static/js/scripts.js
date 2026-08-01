@@ -1,6 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'research', 'projects', 'awards', 'Intership']
+const cache_version = '4'
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -27,7 +28,7 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // Yaml config
-    fetch(content_dir + config_file)
+    fetch(content_dir + config_file + '?v=' + cache_version)
         .then(response => response.text())
         .then(text => {
             const yml = jsyaml.load(text);
@@ -47,7 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
         // Skip research & projects - handled by JSON renderers
         if (name === 'research' || name === 'projects') return;
 
-        fetch(content_dir + name + '.md')
+        fetch(content_dir + name + '.md?v=' + cache_version)
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
@@ -213,7 +214,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     // Load research data
-    fetch(content_dir + 'Research.json')
+    fetch(content_dir + 'Research.json?v=' + cache_version)
         .then(response => response.json())
         .then(data => {
             researchData = data;
@@ -339,7 +340,7 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
 
-        fetch(content_dir + 'projects.json')
+        fetch(content_dir + 'projects.json?v=' + cache_version)
             .then(response => {
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 return response.json();
