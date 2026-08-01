@@ -61,7 +61,7 @@
       "statusClass": "working",
       "links": [],
       "abstract": "In the digital economy, data is a strategic asset, yet its returns often mismatch with infrastructure investment. This paper develops a dynamic framework modeling data as informational capital that improves productivity beliefs through learning. Firms jointly invest in physical and data capital under adjustment costs. Data enhances production by refining knowledge and improving capital allocation. Optimal data accumulation balances user cost against marginal informational gains. The model yields two equilibria: a “data poverty” trap from low marginal returns, and a “data hoarding” equilibrium where persistent value drives excessive accumulation and entry barriers. These findings explain data-asset mismatches in digital economies and contribute to the literature on data economics",
-      "images": ["static/assets/img/Data1.png", "static/assets/img/Data2.png", "static/assets/img/Data3.png"]
+      "images": ["static/assets/img/phase_diagram.png", "static/assets/img/reverse_dynamics.png", "static/assets/img/s_curve_transition.png"]
     },
 
     {
