@@ -76,13 +76,13 @@
     }
   ],
   "ai": [
-    {"title": "Not All Memes Need Images: Adaptive Computation Allocation for Multimodal Metaphor Understanding",
-    "authors": "Chujie W, Luhan Z, Zhuohuan H",
+    {"title": "Not All Memes Need Expensive Visual Reasoning: Adaptive Reasoning Allocation for Multimodal Metaphor Detection",
+    "authors": "Chujie W,Chenxu Q, Menghan Z, Yu L, Jialei F",
     "journal": "Working Paper",
-    "status": "We are going to submit to AAAI",
-    "statusClass": "working",
-    "abstract": "Multimodal metaphor detection requires cross‑modal reasoning, yet computational effort need not be uniform. We present HRA (Hierarchical Reasoning Allocation), a routing framework that dynamically decides visual usage via a two‑stage gate: Stage 1 determines image necessity; Stage 2 selects a Visual Expert or Cross‑Modal Expert for image‑dependent samples. Three mechanism‑aware experts, fed with distinct inputs, enable specialization without parameter growth. Experiments across two backbones (CLIP, SigLIP) and three distributions (in‑domain, cross‑lingual, cross‑dataset) show HRA achieves statistically identical accuracy to the strongest static MoE baseline while reducing computation by 31% through selective image encoding. Ablations confirm hierarchical routing stabilizes weaker backbones, and expert‑specific inputs yield consistent gains. Anytime‑inference tests show stable accuracy across all image‑usage ratios. Qualitative results indicate routing decisions are interpretable and correlate with human‑annotated metaphor categories. Overall, we argue adaptive routing in multimodal models should be reframed as an efficiency and interpretability mechanism—a conclusion robust to two backbones and three distribution shifts.",
-    "images": ["static/assets/img/Case study.png", "static/assets/img/Framework.png", "static/assets/img/Pareto.png"]
+    "status": "AAAI",
+    "statusClass": "Under-review",
+    "abstract": "Recent multimodal metaphor detection methods often assume that richer visual reasoning consistently improves performance. We revisit this assumption through a diagnostic study of visual reasoning allocation. We propose HRA (Hierarchical Reasoning Allocation), an adaptive routing framework that invokes the full visual reasoning path under a learned computation-allocation policy. HRA first encodes text and uses a text-conditioned gate to decide whether to run image encoding and heavy multimodal experts; routed visual samples then use lightweight interaction features and a second stage expert selector. On MET-Meme, Dense MoE obtains the strongest F1 (72.70), while HRA reaches 71.60 F1 with a profiled relative online cost of 0.47 (16.6 GFLOPs vs. 35.3 GFLOPs), corresponding to a 53% computation reduction. A simple residual interaction baseline reaches 70.10 F1, accounting for 77% of the total multimodal gain over text-only inference. This indicates that much of the benefit comes from lightweight text-image conditioning, while heavy expert reasoning adds a smaller marginal improvement. On MultiMET, text-only inference outperforms the stable multimodal variants under the same frozen-backbone setting, while several fusion runs collapse toward majority-class prediction. We therefore frame HRA not as a new state-of-the-art architecture, but as an efficiency-oriented and diagnostic framework for studying when expensive visual reasoning is worth its cost. The gate controls aggregate computation, but is neither significantly correlated with realized visual gain nor a calibrated estimator of visual dependency",
+    "images": ["static/assets/img/fig_tsne.png", "static/assets/img/Framework.png", "static/assets/img/fig2_pareto.png"]
     }
   ]
 }
