@@ -1,6 +1,14 @@
+#### Guancheng Digital Technology (Remote)
+*Forward Deployed Engineer, 06/2026 – 09/2026*
+
+- Conduct research and interviews with client companies, and draft PRD and technical documentation.
+- By implementing an employee appraisal system using Vibe Coding, the employee appraisal cycle has been shortened (with a 40% increase in efficiency)
+- Developed an PowerPoint generation agent, reducing the production time per presentation from 2 hours to 12 minutes, saving over 60 man-hours per month.
+
+
 #### HengZong XinXi (Shanghai)
 
-*Algorithm Research Institute (Online), 11/2025 – 2/2026*
+*Algorithm Research Institute, 11/2025 – 02/2026*
 
 - Cleaning, denoising and structurally annotating text interpreting clients' medical policies to build a high-quality proprietary dataset
 - By employing RCTS three-level slicing and BioBERT vector embedding, and combining vectors with keywords, we enhance search accuracy and efficiency

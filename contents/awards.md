@@ -1,3 +1,5 @@
+- The 2nd prize, the trakc of ZILO, 3rd Adventure-X Hackason, Decree Farm   08/2026
+
 - The Honorable Mention prize, the 41st Mathematical Contest In Modeling(MCM)                  05/2025  
 
 - The 3rd Prize at the Provincial Level In China National College Students Competition on Energy Economics   06/2025  

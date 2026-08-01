@@ -10,6 +10,18 @@
       ],
       "video": "static/assets/Video/Group Research video.mp4",
       "images": ["static/assets/img/Group research 1.png", "static/assets/img/Group Research 2.png", "static/assets/img/Group Research 3.png"]
+    },
+
+    {
+      "title": "Decree Farm",
+      "description": "Decree Farm is a gamified focus-management system that combines wearable hardware, machine learning, and an AI agent. A smart ring detects the user’s focus state and translates it into real-time actions in *Stardew Valley*, where the agent autonomously farms, waters crops, and harvests resources. Sustained focus leads to in-game rewards, while distraction triggers penalties such as lost coins and withered crops, turning self-discipline into an engaging and visible feedback loop.",
+      "status": "In Progress",
+      "statusClass": "working",
+      "links": [
+        {"text": "Live Demo", "url": "https://github.com/vacucity/Decree-Farm", "icon": "bi-globe"}
+      ],
+      "video": "static/assets/Video/Decree Farm.mp4",
+      "images": ["static/assets/img/Farm1 .png", "static/assets/img/Farm2.png", "static/assets/img/Farm3.png"]
     }
   ]
 }
