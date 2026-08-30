@@ -22,6 +22,19 @@
       ],
       "video": "static/assets/Video/Decree Farm.mp4",
       "images": ["static/assets/img/Farm1 .png", "static/assets/img/Farm2.png", "static/assets/img/Farm3.png"]
+    },
+
+    {
+      "title": "ScenicMind",
+      "description": "ScenicMind is designed for scenic area operation managers, using AI to connect passenger flow forecasting, operational indicator analysis, and decision-making reports into an automated closed-loop process. After uploading historical scenic area data, the system automatically performs passenger flow forecasting, calculates 8 key operational indicators, and conducts factor attribution analysis. It then leverages multi-agent collaboration to generate operational analysis reports that are ready for use in morning meetings.",
+      "status": "In Progress",
+      "statusClass": "working",
+      "links": [
+        {"text": "Live Demo", "url": "https://github.com/vacucity/ScenicMind", "icon": "bi-globe"}
+      ],
+      "video": "static/assets/Video/ScenicMind.mp4",
+      "images": ["static/assets/img/ScenicMind1.png", "static/assets/img/ScenicMind2.png", "static/assets/img/ScenicMind3.png"]
     }
+
   ]
 }
