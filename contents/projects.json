@@ -6,9 +6,9 @@
       "status": "In Progress",
       "statusClass": "working",
       "links": [
-        {"text": "Live Demo", "url": "https://group-research.vercel.app/register", "icon": "bi-globe"}
+        {"text": "Live Demo", "url": "http://101.37.18.166", "icon": "bi-globe"}
       ],
-      "video": "static/assets/Video/ResearchFlow-Promo.mp4",
+      "video": "static/assets/Video/ResearchFlow.mp4",
       "images": ["static/assets/img/Group research 1.png", "static/assets/img/Group Research 2.png", "static/assets/img/Group Research 3.png"]
     },
 
