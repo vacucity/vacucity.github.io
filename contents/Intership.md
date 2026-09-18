@@ -1,4 +1,4 @@
-#### Guancheng Digital Technology (Remote)
+#### Guancheng Digital Technology 
 *Forward Deployed Engineer, 06/2026 – 09/2026*
 
 - Conduct research and interviews with client companies, and draft PRD and technical documentation.
