@@ -10,7 +10,7 @@
 
 #### Education
 - <strong>Zhongnan University of Economics and Law，Finance           09/2021-06/2025</strong>
-- <strong>UChicago, Applied Data Science                              09/2026-06/2028</strong>
+- <strong>UChicago, Applied Data Science                              09/2026-12/2027</strong>
 
 #### Research Interests
 - <strong>Economic： Labor, Innovation, etc.</strong>
