@@ -76,13 +76,25 @@
     }
   ],
   "ai": [
-    {"title": "Not All Memes Need Expensive Visual Reasoning: Adaptive Reasoning Allocation for Multimodal Metaphor Detection",
-    "authors": "Chujie W,Chenxu Q, Menghan Z, Yu L, Jialei F",
-    "journal": "Working Paper",
-    "status": "AAAI",
-    "statusClass": "Under-review",
-    "abstract": "Recent multimodal metaphor detection methods often assume that richer visual reasoning consistently improves performance. We revisit this assumption through a diagnostic study of visual reasoning allocation. We propose HRA (Hierarchical Reasoning Allocation), an adaptive routing framework that invokes the full visual reasoning path under a learned computation-allocation policy. HRA first encodes text and uses a text-conditioned gate to decide whether to run image encoding and heavy multimodal experts; routed visual samples then use lightweight interaction features and a second stage expert selector. On MET-Meme, Dense MoE obtains the strongest F1 (72.70), while HRA reaches 71.60 F1 with a profiled relative online cost of 0.47 (16.6 GFLOPs vs. 35.3 GFLOPs), corresponding to a 53% computation reduction. A simple residual interaction baseline reaches 70.10 F1, accounting for 77% of the total multimodal gain over text-only inference. This indicates that much of the benefit comes from lightweight text-image conditioning, while heavy expert reasoning adds a smaller marginal improvement. On MultiMET, text-only inference outperforms the stable multimodal variants under the same frozen-backbone setting, while several fusion runs collapse toward majority-class prediction. We therefore frame HRA not as a new state-of-the-art architecture, but as an efficiency-oriented and diagnostic framework for studying when expensive visual reasoning is worth its cost. The gate controls aggregate computation, but is neither significantly correlated with realized visual gain nor a calibrated estimator of visual dependency",
-    "images": ["static/assets/img/fig_tsne.png", "static/assets/img/Framework.png", "static/assets/img/fig2_pareto.png"]
+    {
+      "title": "Route Models, Not Modalities: What Adaptive Computation Can and Cannot Save in Multimodal Meme Understanding",
+      "authors": "Chujie W, Chenxu Q, Feiyan F",
+      "journal": "ACL 2026",
+      "status": "Under Review",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract": "Adaptive multimodal inference often means modality routing: deciding from the text whether the image is worth encoding. We test it on meme metaphor and hate detection with frozen vision-language encoders, hard decisions, measured compute and matched budgets. A text-first router reaches 78.1 macro-F1 on MET-Meme when evaluated as trained, with every image encoded, but 68.2 when images are skipped, below a text-only model (73.1). Stronger modality routers, including gates trained on the image's realised benefit, do not beat a confidence rule at matched budgets on MET-Meme, MultiMET or Hateful Memes: learned text-only gates do not reliably predict which errors the image will correct. Model routing does better. Deferring CLIP ViT-B/32's 20% least confident memes to SigLIP-B/16 uses 51-53% of SigLIP's FLOPs, changes macro-F1 by -0.4 to +0.4 points, and beats the best modality router at equal FLOPs by 2.5 and 4.7 points on MET-Meme and Hateful Memes. With the 4.3x larger SigLIP-L as second stage, it is 0.8 points better than SigLIP-L on MET-Meme at 27% of its FLOPs but falls short on Hateful Memes. Both outcomes follow from how far the cheap model lags and how well its uncertainty finds what the larger model fixes.",
+      "images": ["static/assets/img/Route1.png", "static/assets/img/Route2.png", "static/assets/img/Route3.png"]
+    },
+    {
+      "title": "When Does Wording Change Selection? A Reliability Audit of Instruction-Data Selectors",
+      "authors": "Chenxu Q, Chujie W",
+      "journal": "ACL 2026",
+      "status": "Under Review",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract": "Instruction-data selectors are often treated as measurements of example value, although one request admits multiple valid wordings. We audit this measurement on 1,719 individually rewritten Dolly examples. At a 10% budget, Response NLL/IFD churn is 9.9/14.5% under Mistral-7B, 8.1/17.4% under Qwen3-4B, and 6.4/20.3% under SmolLM2, versus 90.0% for independent random subsets. A matched Mistral trailing-space control yields 2.9% NLL format churn, leaving a +7.0-point semantic excess (paired 95% CI: +3.5 to +11.0); the IFD excess is +4.7 points (0 to +11.0). Shared-template LMentry stress tests produce 58-74% churn, but an additional Dolly shared-wrapper analysis meets the material-amplification criterion in 0/6 cells, so shared structure alone is insufficient to explain the gap. A post-hoc perturbation-to-margin diagnostic correlates with churn at 0.919 (95% CI [0.835, 0.933]). Finally, a matched-selection study holds training text fixed and changes only selected semantic IDs, producing a measurable +1.7-point downstream difference in one setting (95% CI [0.3, 3.1]), without either wording-based selection arm outperforming the matched random baseline. This result is not evidence of harm or a general advantage for paraphrase-based selection.",
+      "images": ["static/assets/img/Wording1.png", "static/assets/img/Wording2.png", "static/assets/img/Wording3.png"]
     }
   ]
 }
