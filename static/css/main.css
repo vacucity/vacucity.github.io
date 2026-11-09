@@ -224,12 +224,12 @@ body {
 }
 
 .hero-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 3rem;
     position: relative;
     z-index: 1;
+}
+
+.hero-text {
+    max-width: 680px;
 }
 
 .hero-avatar {
@@ -366,117 +366,6 @@ body {
 .btn-anime.ghost:hover {
     background: rgba(255, 255, 255, 0.16);
     border-color: var(--cyan);
-}
-
-/* Gacha-style character cards */
-.hero-party {
-    position: relative;
-    width: 520px;
-    height: 430px;
-}
-
-.char-card {
-    position: absolute;
-    top: 50px;
-    width: 200px;
-    aspect-ratio: 3 / 4;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 3px solid #fff;
-    background: #fff;
-    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.55);
-    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease, border-color 0.45s ease;
-    text-decoration: none;
-}
-
-.char-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.char-card::after {
-    /* holo shine sweep */
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.5) 45%, transparent 60%);
-    transform: translateX(-120%);
-    transition: transform 0.8s ease;
-}
-
-.char-card:hover::after {
-    transform: translateX(120%);
-}
-
-.char-card.c1 {
-    left: 0;
-    transform: rotate(-9deg);
-    z-index: 1;
-}
-
-.char-card.c2 {
-    left: 160px;
-    top: 0;
-    transform: rotate(0deg);
-    z-index: 2;
-}
-
-.char-card.c3 {
-    left: 320px;
-    transform: rotate(9deg);
-    z-index: 1;
-}
-
-.char-card:hover {
-    z-index: 5;
-    border-color: var(--cyan);
-    transform: translateY(-14px) rotate(0deg) scale(1.05);
-    box-shadow: 0 24px 48px rgba(34, 211, 238, 0.35);
-}
-
-.char-card-rank {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    color: var(--navy);
-    padding: 0.1rem 0.55rem;
-    border-radius: 4px;
-    background: linear-gradient(120deg, #fde68a, #f59e0b);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.char-card-foot {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 1.6rem 0.8rem 0.65rem;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.9) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.char-card-stars {
-    color: var(--gold);
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-shadow: 0 0 6px rgba(251, 191, 36, 0.8);
-}
-
-.char-card-name {
-    font-family: var(--font-display);
-    font-weight: 800;
-    color: #fff;
-    font-size: 0.95rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
 }
 
 /* ===== Sections ===== */
@@ -1413,20 +1302,6 @@ section .section-head h2 i {
 }
 
 /* ===== Responsive ===== */
-@media screen and (max-width: 1199px) {
-    .hero-party {
-        width: 440px;
-        height: 380px;
-    }
-
-    .char-card {
-        width: 170px;
-    }
-
-    .char-card.c2 { left: 135px; }
-    .char-card.c3 { left: 270px; }
-}
-
 @media screen and (max-width: 991px) {
     .hero {
         min-height: 0;
@@ -1437,45 +1312,18 @@ section .section-head h2 i {
         background: linear-gradient(180deg, rgba(8, 12, 30, 0.85) 0%, rgba(15, 23, 42, 0.58) 60%, rgba(15, 23, 42, 0.38) 100%);
     }
 
-    .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2.5rem;
-    }
-
     .hero-text {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin: 0 auto;
     }
 
     .hero-tags,
     .hero-cta {
         justify-content: center;
     }
-
-    .hero-party {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        gap: 0.6rem;
-        padding-top: 0.6rem;
-    }
-
-    .char-card,
-    .char-card.c1,
-    .char-card.c2,
-    .char-card.c3 {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: min(30%, 170px);
-    }
-
-    .char-card.c1 { transform: rotate(-5deg); }
-    .char-card.c2 { transform: translateY(-10px); }
-    .char-card.c3 { transform: rotate(5deg); }
 
     #mainNav .navbar-nav .nav-item .nav-link {
         display: inline-block;
@@ -1539,25 +1387,6 @@ section .section-head h2 i {
     .pub-toggle-btn {
         padding: 0.5rem 1.1rem;
         font-size: 0.88rem;
-    }
-
-    .char-card-rank {
-        font-size: 0.65rem;
-        top: 6px;
-        left: 6px;
-    }
-
-    .char-card-stars {
-        font-size: 0.6rem;
-    }
-
-    .char-card-name {
-        font-size: 0.72rem;
-        letter-spacing: 0.08em;
-    }
-
-    .char-card-foot {
-        padding: 1.1rem 0.3rem 0.45rem;
     }
 }
 
