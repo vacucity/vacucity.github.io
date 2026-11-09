@@ -1,7 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'research', 'projects', 'awards', 'Intership']
-const cache_version = '4'
+const cache_version = '5'
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', event => {
             }
 
             return `
-            <div class="pub-card">
+            <div class="pub-card" style="animation-delay:${Math.min(index, 8) * 70}ms">
                 <div class="pub-card-header">
                     <span class="pub-card-title">${escapeHtml(title)}</span>
                     <span class="pub-card-status status-${paper.statusClass || 'working'}">${escapeHtml(statusLabel)}</span>
@@ -309,7 +309,7 @@ window.addEventListener('DOMContentLoaded', event => {
             const video = project.video || '';
 
             return `
-            <div class="project-card">
+            <div class="project-card" style="animation-delay:${Math.min(index, 8) * 70}ms">
                 <div class="project-card-header">
                     <span class="project-card-title">${escapeHtml(title)}</span>
                     ${status ? `<span class="pub-card-status status-${statusClass}">${escapeHtml(status)}</span>` : ''}
@@ -373,5 +373,74 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Load projects
     renderProjects();
+
+    // ================================================================
+    // === ANIME DECORATIONS: stars, sakura petals, lightbox, to-top ===
+    // ================================================================
+    const reduceMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Twinkling stars in the hero sky
+    const sky = document.querySelector('.hero-sky');
+    if (sky) {
+        for (let i = 0; i < 36; i++) {
+            const s = document.createElement('span');
+            s.className = 'star-dot';
+            s.style.left = (Math.random() * 100).toFixed(2) + '%';
+            s.style.top = (Math.random() * 70).toFixed(2) + '%';
+            s.style.animationDelay = (Math.random() * 3.2).toFixed(2) + 's';
+            s.style.animationDuration = (2.4 + Math.random() * 2.4).toFixed(2) + 's';
+            sky.appendChild(s);
+        }
+    }
+
+    // Falling sakura petals in the hero
+    const petals = document.querySelector('.hero-petals');
+    if (petals && !reduceMotion) {
+        const count = window.innerWidth < 768 ? 12 : 22;
+        for (let i = 0; i < count; i++) {
+            const p = document.createElement('span');
+            p.className = 'petal';
+            const size = 0.7 + Math.random() * 0.8;
+            p.style.left = (Math.random() * 100).toFixed(2) + '%';
+            p.style.width = (14 * size).toFixed(1) + 'px';
+            p.style.height = (11 * size).toFixed(1) + 'px';
+            p.style.opacity = (0.55 + Math.random() * 0.4).toFixed(2);
+            p.style.animationDuration = (10 + Math.random() * 10).toFixed(2) + 's';
+            p.style.animationDelay = (-Math.random() * 20).toFixed(2) + 's';
+            petals.appendChild(p);
+        }
+    }
+
+    // Lightbox for research / project figures (cards are rendered later, so delegate)
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        const lbImg = lightbox.querySelector('img');
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            lbImg.removeAttribute('src');
+        };
+        document.addEventListener('click', (e) => {
+            const slot = e.target.closest('.pub-image-slot.has-image, .project-image-slot.has-image');
+            if (!slot) return;
+            const img = slot.querySelector('img');
+            if (!img) return;
+            lbImg.src = img.getAttribute('src');
+            lbImg.alt = img.alt || '';
+            lightbox.classList.add('open');
+        });
+        lightbox.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+        });
+    }
+
+    // Back-to-top button
+    const toTop = document.querySelector('.to-top');
+    if (toTop) {
+        const onScroll = () => toTop.classList.toggle('show', window.scrollY > 600);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
 
 });

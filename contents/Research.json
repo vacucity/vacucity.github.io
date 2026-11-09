@@ -95,6 +95,16 @@
       "links": [],
       "abstract": "Instruction-data selectors are often treated as measurements of example value, although one request admits multiple valid wordings. We audit this measurement on 1,719 individually rewritten Dolly examples. At a 10% budget, Response NLL/IFD churn is 9.9/14.5% under Mistral-7B, 8.1/17.4% under Qwen3-4B, and 6.4/20.3% under SmolLM2, versus 90.0% for independent random subsets. A matched Mistral trailing-space control yields 2.9% NLL format churn, leaving a +7.0-point semantic excess (paired 95% CI: +3.5 to +11.0); the IFD excess is +4.7 points (0 to +11.0). Shared-template LMentry stress tests produce 58-74% churn, but an additional Dolly shared-wrapper analysis meets the material-amplification criterion in 0/6 cells, so shared structure alone is insufficient to explain the gap. A post-hoc perturbation-to-margin diagnostic correlates with churn at 0.919 (95% CI [0.835, 0.933]). Finally, a matched-selection study holds training text fixed and changes only selected semantic IDs, producing a measurable +1.7-point downstream difference in one setting (95% CI [0.3, 3.1]), without either wording-based selection arm outperforming the matched random baseline. This result is not evidence of harm or a general advantage for paraphrase-based selection.",
       "images": ["static/assets/img/Wording1.png", "static/assets/img/Wording2.png", "static/assets/img/Wording3.png"]
+    },
+    {
+      "title": "Does Visually Grounded Reasoning Warn of Forgetting? Two Pre-registered Tests in Vision-Language Fine-tuning",
+      "authors": "Chujie W",
+      "journal": "CVPR 2027",
+      "status": "Under Review",
+      "statusClass": "under-review",
+      "links": [],
+      "abstract": "When a vision-language model (VLM) is fine-tuned on a new task, it may forget earlier visual skills. We ask whether reference-rationale likelihood conditioned on the correct image warns of upcoming forgetting beyond accuracy trends and answer likelihoods, and whether any gain depends on the image. Using Qwen2.5-VL-3B, we acquire ScienceQA and then fine-tune on remote-sensing VQA. Exploratory screening identifies collapse and later forgetting under full vision-side fine-tuning. We conduct two internally time-stamped, hash-sealed studies, freezing predictors on development seeds before evaluation on confirmation seeds. Study 2 reduced confirmation seeds from 20 to 12 after development analysis, before confirmation. Adding image-conditioned rationale likelihood improves seed-level Brier score by 0.00012 (95% CI [-0.00056, +0.00080]) in Study 1 and 0.00097 ([+0.00027, +0.00167], p = 0.009) in Study 2. The latter gain is statistically detectable, but both fall below the pre-registered minimum practical effect of 0.005. Neither study establishes an advantage over rationale-likelihood controls without the correct image. Short-answer fine-tuning suppresses generated rationales, limiting their evaluation as warning signals. These findings concern the studied frozen prediction procedures and support evaluating candidate monitors against accuracy-based baselines and image-ablated controls.",
+      "images": ["static/assets/img/PreEcho1.png", "static/assets/img/PreEcho2.png", "static/assets/img/PreEcho3.png"]
     }
   ]
 }
