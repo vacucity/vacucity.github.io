@@ -1,7 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'research', 'projects', 'awards', 'Intership']
-const cache_version = '5'
+const cache_version = '6'
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -394,21 +394,21 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
-    // Falling sakura petals in the hero
-    const petals = document.querySelector('.hero-petals');
-    if (petals && !reduceMotion) {
-        const count = window.innerWidth < 768 ? 12 : 22;
+    // Falling night snow / starlight in the hero
+    const particles = document.querySelector('.hero-particles');
+    if (particles && !reduceMotion) {
+        const count = window.innerWidth < 768 ? 16 : 30;
         for (let i = 0; i < count; i++) {
-            const p = document.createElement('span');
-            p.className = 'petal';
-            const size = 0.7 + Math.random() * 0.8;
-            p.style.left = (Math.random() * 100).toFixed(2) + '%';
-            p.style.width = (14 * size).toFixed(1) + 'px';
-            p.style.height = (11 * size).toFixed(1) + 'px';
-            p.style.opacity = (0.55 + Math.random() * 0.4).toFixed(2);
-            p.style.animationDuration = (10 + Math.random() * 10).toFixed(2) + 's';
-            p.style.animationDelay = (-Math.random() * 20).toFixed(2) + 's';
-            petals.appendChild(p);
+            const f = document.createElement('span');
+            f.className = Math.random() < 0.25 ? 'flake gold' : 'flake';
+            const size = (2 + Math.random() * 3).toFixed(1) + 'px';
+            f.style.left = (Math.random() * 100).toFixed(2) + '%';
+            f.style.width = size;
+            f.style.height = size;
+            f.style.opacity = (0.45 + Math.random() * 0.5).toFixed(2);
+            f.style.animationDuration = (12 + Math.random() * 12).toFixed(2) + 's';
+            f.style.animationDelay = (-Math.random() * 24).toFixed(2) + 's';
+            particles.appendChild(f);
         }
     }
 
